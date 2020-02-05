@@ -1,4 +1,4 @@
-# this is a master file - working version
+# this is a master file - working version for ONE MONTH ONLY
 import os,time,datetime,argparse,dateutil.parser,pandas as pd
 from influxdb import DataFrameClient
 from influxdb import InfluxDBClient

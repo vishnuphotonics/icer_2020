@@ -1,0 +1,2 @@
+# Set server time
+timedatectl set-time "10:35"

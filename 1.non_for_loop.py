@@ -16,6 +16,7 @@ def daterange(date1, date2):
 
 
 #print int(quarter1[0]+","+quarter1[1]+","+quarter1[2])
+#( year,month,date)
 start_dt = date(2018,1,1)
 end_dt = date(2018,1,31)
 g=[dt.strftime("%Y%m%d")for dt in daterange(start_dt, end_dt) ] # prints all dates- print g

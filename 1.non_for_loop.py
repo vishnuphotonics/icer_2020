@@ -1,10 +1,9 @@
-# this is a master file - working version for ONE MONTH ONLY
+# this is a master file - working version - Python3 version
 import os,time,datetime,argparse,dateutil.parser,pandas as pd
 from influxdb import DataFrameClient
 from influxdb import InfluxDBClient
 from pandas import DataFrame, read_csv
 from datetime import timedelta, date
-
 
 ##### Program starts #####
 invertorID="SN0005000043200013"
@@ -13,12 +12,9 @@ os.chdir("/home/vishnu/Documents/icer/"+invertorID)
 def daterange(date1, date2):
     for n in range(int ((date2 - date1).days)+1):
         yield date1 + timedelta(n)
-
-
-#print int(quarter1[0]+","+quarter1[1]+","+quarter1[2])
-#( year,month,date)
+#year,month,day
 start_dt = date(2018,1,1)
-end_dt = date(2018,1,31)
+end_dt = date(2018,1,30)
 g=[dt.strftime("%Y%m%d")for dt in daterange(start_dt, end_dt) ] # prints all dates- print g
 print (g)
 print ('days ='+str(len(g)))
@@ -30,6 +26,7 @@ for x in range(0, len(g)):
     df=df.append(dg,ignore_index=True)
     print ("fileno="+str(x),"filename="+str(g[x]+'.csv') )
 print (df)
+
 size=len(df) 
 print ('old df size=',size)
 # insert time adjusted column 
@@ -41,10 +38,12 @@ tt=df[df['Timeadjusted'].isnull()]
 print (tt)
 df=df.dropna()
 # prints dropped df
+df=df.reset_index(drop=True)
 print(df)
 newsize=len(df) 
-print ("new df size",size)
+print ("new df size",newsize)
 print (df.dtypes)
+
 
 # preparation for influxdb database
 # columns for database

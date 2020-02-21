@@ -1,0 +1,33 @@
+import os,time,datetime,argparse,dateutil.parser,pandas as pd
+from influxdb import DataFrameClient
+from influxdb import InfluxDBClient
+from pandas import DataFrame, read_csv
+from datetime import timedelta, date
+
+
+
+##### Program starts #####
+invertorID="SN0005000043200013"
+os.chdir("/home/vishnu/Documents/icer/"+invertorID)
+
+      
+#( date,month,year)
+start = datetime.datetime.strptime("01-01-2014", "%d-%m-%Y")
+end = datetime.datetime.strptime("31-12-2014", "%d-%m-%Y")
+date_generated = [start + datetime.timedelta(days=x) for x in range(0, (end-start).days)]
+for date in date_generated:
+    #print (date.strftime("%d-%m-%Y"))
+    print (date.strftime("%d,%m,%Y"))
+    start_date=(date.strftime("%d"))
+    end_date=(date.strftime("%d"))
+    month=(date.strftime("%m"))
+    year=(date.strftime("%Y"))
+    print (start_date,month,year)
+
+    start_dt = (str(year)+"-"+str(month)+"-"+str(start_date))
+    end_dt= (str(year)+"-"+str(month)+"-"+str(end_date))
+    filename=(str(year)+str(month)+str(start_date))+".csv"
+    filename2=(str(year)+str(month)+str(end_date))+".csv"
+    print (filename)
+    
+    

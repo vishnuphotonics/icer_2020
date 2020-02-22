@@ -1,3 +1,4 @@
+# This program prints the no of days and the csv file format
 import os,time,datetime,argparse,dateutil.parser,pandas as pd
 from influxdb import DataFrameClient
 from influxdb import InfluxDBClient

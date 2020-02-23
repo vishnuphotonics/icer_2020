@@ -1,5 +1,5 @@
 # This program creates the df for the specified no of dates :
-#Attention ---   Year : 2015, Time 8 hours 30 minutes, Change directory OS.chdir
+#Attention ---   Year : 2015, Time 5 hours 30 minutes, Change directory OS.chdir
 import os,time,datetime,argparse,dateutil.parser,pandas as pd
 from influxdb import DataFrameClient
 from influxdb import InfluxDBClient

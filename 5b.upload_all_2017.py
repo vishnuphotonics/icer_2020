@@ -29,7 +29,7 @@ for i in invertors:
         dg=pd.read_csv(filename)
         df=df.append(dg,ignore_index=True)
         df.insert(0,'Timeadjusted',0) # df.insert(idx,col_name,value)
-        df['Timeadjusted'] = pd.to_datetime(df.Time)-pd.Timedelta(hours=5,minutes=30)
+        df['Timeadjusted'] = pd.to_datetime(df.Time)-pd.Timedelta(hours=8,minutes=5)
         #Identify and drop NAN Values
         tt=df[df['Timeadjusted'].isnull()]
         print (tt)

@@ -1,0 +1,6 @@
+Year -- time Delay
+2015 -- 5 hours 30 min
+2016 -- 5 hours 30 min
+2017 -- 8hours 5 min
+2018 -- 8 hours 15 min
+2019 -- 8 hours 40 min

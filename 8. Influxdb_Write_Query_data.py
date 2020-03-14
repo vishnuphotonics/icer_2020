@@ -1,4 +1,5 @@
 # This program write data into influxdb and also queries data
+#https://pythontic.com/database/influxdb/writing_and_querying
 from influxdb import InfluxDBClient
 
  
